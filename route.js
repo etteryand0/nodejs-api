@@ -1,13 +1,13 @@
+const GET = require('./routes/GET');
+// const requestError = require('./routes/requestError');
+import { requestError } from './routes/requestError';
+// const FETCH = require('./routes/FETCH);
+// const POST = require('./routes/POST);
+
 exports.route = (req, res) => {
-    if(req.url === '/api' && req.method === 'GET') {
-        res.writeHead(200, { 'Content-Type':'application/json' });
-        res.end(JSON.stringify({
-            message:`Route found - ${req.url}`
-        }));
+    if(req.method === 'GET') {
+        GET(req, res);
     } else {
-        res.writeHead(404, { 'Content-Type':'application/json' });
-        res.end(JSON.stringify({
-            message:'Route not found'
-        }));
+        requestError(404);
     }
 }

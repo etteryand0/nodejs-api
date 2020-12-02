@@ -20,5 +20,9 @@
   "homepage": "https://github.com/etteryand0/rest-api#readme",
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
+  "type": "module"
 }
